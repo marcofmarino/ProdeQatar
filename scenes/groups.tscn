@@ -1,0 +1,364 @@
+[gd_scene load_steps=19 format=3 uid="uid://18hvpyyif434"]
+
+[ext_resource type="Texture2D" uid="uid://k04hsiqsrchy" path="res://images/group_a_normal.png" id="1_4q0tm"]
+[ext_resource type="Script" path="res://logic/group_select.gd" id="1_vesud"]
+[ext_resource type="Texture2D" uid="uid://bal0tlq2x6y3y" path="res://images/group_a_focus.png" id="2_plwnw"]
+[ext_resource type="Texture2D" uid="uid://c2pb5vr625hag" path="res://images/group_b.png" id="3_lmrpf"]
+[ext_resource type="Texture2D" uid="uid://denb0u48et0pt" path="res://images/group_b_focus.png" id="4_mkrvy"]
+[ext_resource type="Texture2D" uid="uid://dejdwgdnh27qo" path="res://images/group_c.png" id="5_c7w0o"]
+[ext_resource type="Texture2D" uid="uid://75khy5y7aqdv" path="res://images/group_c_focus.png" id="6_d1em0"]
+[ext_resource type="Texture2D" uid="uid://dd1w1vwd5def7" path="res://images/group_d.png" id="7_k7dd1"]
+[ext_resource type="Texture2D" uid="uid://iw7kgt2hlwfm" path="res://images/group_d_focus.png" id="8_r8mhk"]
+[ext_resource type="Texture2D" uid="uid://bii3kaihaus5j" path="res://images/group_e.png" id="9_gp1k3"]
+[ext_resource type="Texture2D" uid="uid://c7ewvpqygvya1" path="res://images/group_e_focus.png" id="10_ie08q"]
+[ext_resource type="Texture2D" uid="uid://bji5wk45p5uod" path="res://images/group_f.png" id="11_ayvfo"]
+[ext_resource type="Texture2D" uid="uid://ch1hr7vddocx" path="res://images/group_f_focus.png" id="12_l02hy"]
+[ext_resource type="Texture2D" uid="uid://ffvmt22axygq" path="res://images/group_g.png" id="13_8lgke"]
+[ext_resource type="Texture2D" uid="uid://ckpnu1hhayxau" path="res://images/group_g_focus.png" id="14_2pnhq"]
+[ext_resource type="Texture2D" uid="uid://ccdlgcbjxiisl" path="res://images/group_h.png" id="15_gihlf"]
+[ext_resource type="Texture2D" uid="uid://5oicsxfirwb7" path="res://images/group_h_focus.png" id="16_m4kfx"]
+[ext_resource type="Theme" uid="uid://d1orvoggt0gkb" path="res://themes/qatar_theme.tres" id="17_biiv5"]
+
+[node name="Groups" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vesud")
+metadata/_edit_lock_ = true
+metadata/_edit_horizontal_guides_ = [322.0]
+
+[node name="GroupA" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -616.0
+offset_top = -365.0
+offset_right = -334.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="GroupA"]
+offset_right = 274.0
+offset_bottom = 301.0
+ignore_texture_size = true
+
+[node name="ButtonGA" type="TextureButton" parent="GroupA/TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_4q0tm")
+texture_hover = ExtResource("2_plwnw")
+texture_focused = ExtResource("2_plwnw")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="GroupB" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -292.0
+offset_top = -366.0
+offset_right = -17.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="GroupB"]
+offset_right = 274.0
+offset_bottom = 301.0
+ignore_texture_size = true
+
+[node name="ButtonGB" type="TextureButton" parent="GroupB/TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_lmrpf")
+texture_hover = ExtResource("4_mkrvy")
+texture_focused = ExtResource("4_mkrvy")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="GroupC" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 19.0
+offset_top = -366.0
+offset_right = 300.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="GroupC"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -274.0
+offset_bottom = 301.0
+grow_horizontal = 0
+ignore_texture_size = true
+
+[node name="ButtonGC" type="TextureButton" parent="GroupC/TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_c7w0o")
+texture_hover = ExtResource("6_d1em0")
+texture_focused = ExtResource("6_d1em0")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="GroupD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 346.0
+offset_top = -367.0
+offset_right = 624.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="GroupD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -274.0
+offset_bottom = 301.0
+grow_horizontal = 0
+ignore_texture_size = true
+
+[node name="ButtonGD" type="TextureButton" parent="GroupD/TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_k7dd1")
+texture_hover = ExtResource("8_r8mhk")
+texture_focused = ExtResource("8_r8mhk")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="GroupE" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -616.0
+offset_top = 10.0
+offset_right = -336.0
+offset_bottom = 307.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="GroupE"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -301.0
+offset_right = 274.0
+grow_vertical = 0
+ignore_texture_size = true
+
+[node name="ButtonGE" type="TextureButton" parent="GroupE/TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("9_gp1k3")
+texture_hover = ExtResource("10_ie08q")
+texture_focused = ExtResource("10_ie08q")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="GroupF" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -292.0
+offset_top = 7.0
+offset_right = -9.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="GroupF"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -301.0
+offset_right = 274.0
+grow_vertical = 0
+ignore_texture_size = true
+
+[node name="ButtonGF" type="TextureButton" parent="GroupF/TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("11_ayvfo")
+texture_hover = ExtResource("12_l02hy")
+texture_focused = ExtResource("12_l02hy")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="GroupG" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = 5.0
+offset_right = 303.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="GroupG"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -274.0
+offset_top = -301.0
+grow_horizontal = 0
+grow_vertical = 0
+ignore_texture_size = true
+
+[node name="ButtonGG" type="TextureButton" parent="GroupG/TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("13_8lgke")
+texture_hover = ExtResource("14_2pnhq")
+texture_focused = ExtResource("14_2pnhq")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="GroupH" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 340.0
+offset_top = 13.0
+offset_right = 622.0
+offset_bottom = 311.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="GroupH"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -274.0
+offset_top = -301.0
+grow_horizontal = 0
+grow_vertical = 0
+ignore_texture_size = true
+
+[node name="ButtonGH" type="TextureButton" parent="GroupH/TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("15_gihlf")
+texture_hover = ExtResource("16_m4kfx")
+texture_focused = ExtResource("16_m4kfx")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BackExit" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BackExitContainer" type="HBoxContainer" parent="BackExit"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -34.0
+offset_right = -25.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="Back" type="Button" parent="BackExit/BackExitContainer"]
+offset_right = 48.0
+offset_bottom = 21.0
+theme = ExtResource("17_biiv5")
+text = "Volver"
+
+[node name="Control" type="Control" parent="BackExit/BackExitContainer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 48.0
+offset_right = 1276.0
+offset_bottom = 21.0
+size_flags_horizontal = 3
+
+[node name="Exit" type="Button" parent="BackExit/BackExitContainer"]
+offset_left = 1276.0
+offset_right = 1310.0
+offset_bottom = 21.0
+size_flags_horizontal = 8
+theme = ExtResource("17_biiv5")
+text = "Salir"
+
+[connection signal="pressed" from="GroupA/TextureRect/ButtonGA" to="." method="_on_button_ga_pressed"]
+[connection signal="pressed" from="GroupB/TextureRect/ButtonGB" to="." method="_on_button_gb_pressed"]
+[connection signal="pressed" from="GroupC/TextureRect/ButtonGC" to="." method="_on_button_gc_pressed"]
+[connection signal="pressed" from="GroupD/TextureRect/ButtonGD" to="." method="_on_button_gd_pressed"]
+[connection signal="pressed" from="GroupE/TextureRect/ButtonGE" to="." method="_on_button_ge_pressed"]
+[connection signal="pressed" from="GroupF/TextureRect/ButtonGF" to="." method="_on_button_gf_pressed"]
+[connection signal="pressed" from="GroupG/TextureRect/ButtonGG" to="." method="_on_button_gg_pressed"]
+[connection signal="pressed" from="GroupH/TextureRect/ButtonGH" to="." method="_on_button_gh_pressed"]
+[connection signal="pressed" from="BackExit/BackExitContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="BackExit/BackExitContainer/Exit" to="." method="_on_exit_pressed"]

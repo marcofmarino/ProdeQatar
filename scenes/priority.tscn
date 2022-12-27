@@ -1,0 +1,287 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmgnvrqacgkki"]
+
+[ext_resource type="Script" path="res://logic/priority.gd" id="1_yem6b"]
+[ext_resource type="FontFile" uid="uid://h2gu4xw8htn6" path="res://fonts/Qatar2022-Medium.otf" id="2_lcic5"]
+[ext_resource type="Theme" uid="uid://d1orvoggt0gkb" path="res://themes/qatar_theme.tres" id="3_1mjwn"]
+[ext_resource type="Script" path="res://logic/priority_num.gd" id="4_h8n6u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_81fcm"]
+font = ExtResource("2_lcic5")
+font_size = 41
+
+[node name="Priority" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yem6b")
+metadata/_edit_horizontal_guides_ = [318.0, 329.0]
+
+[node name="TeamsContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = -105.0
+offset_right = 24.0
+offset_bottom = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 70
+
+[node name="Team1" type="Control" parent="TeamsContainer"]
+layout_mode = 2
+anchors_preset = 0
+offset_right = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+metadata/_edit_group_ = true
+
+[node name="TeamName" type="Label" parent="TeamsContainer/Team1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.5
+offset_top = -62.0
+offset_right = 200.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "PLACEHOLDER"
+label_settings = SubResource("LabelSettings_81fcm")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PriorityNum" type="Button" parent="TeamsContainer/Team1"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 102.0
+offset_top = -54.0
+offset_right = 180.0
+offset_bottom = -17.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("3_1mjwn")
+theme_override_font_sizes/font_size = 30
+text = "-"
+script = ExtResource("4_h8n6u")
+
+[node name="Team2" type="Control" parent="TeamsContainer"]
+layout_mode = 2
+anchors_preset = 0
+offset_top = 70.0
+offset_right = 210.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+metadata/_edit_group_ = true
+
+[node name="TeamName" type="Label" parent="TeamsContainer/Team2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.5
+offset_top = -62.0
+offset_right = 200.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "PLACEHOLDER"
+label_settings = SubResource("LabelSettings_81fcm")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PriorityNum" type="Button" parent="TeamsContainer/Team2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 102.0
+offset_top = -54.0
+offset_right = 180.0
+offset_bottom = -17.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("3_1mjwn")
+theme_override_font_sizes/font_size = 30
+text = "-"
+script = ExtResource("4_h8n6u")
+
+[node name="Team3" type="Control" parent="TeamsContainer"]
+layout_mode = 2
+anchors_preset = 0
+offset_top = 140.0
+offset_right = 210.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+metadata/_edit_group_ = true
+
+[node name="TeamName" type="Label" parent="TeamsContainer/Team3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.5
+offset_top = -62.0
+offset_right = 200.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "PLACEHOLDER"
+label_settings = SubResource("LabelSettings_81fcm")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PriorityNum" type="Button" parent="TeamsContainer/Team3"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 102.0
+offset_top = -54.0
+offset_right = 180.0
+offset_bottom = -17.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("3_1mjwn")
+theme_override_font_sizes/font_size = 30
+text = "-"
+script = ExtResource("4_h8n6u")
+
+[node name="Team4" type="Control" parent="TeamsContainer"]
+layout_mode = 2
+anchors_preset = 0
+offset_top = 210.0
+offset_right = 210.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+metadata/_edit_group_ = true
+
+[node name="TeamName" type="Label" parent="TeamsContainer/Team4"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.5
+offset_top = -62.0
+offset_right = 200.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "PLACEHOLDER"
+label_settings = SubResource("LabelSettings_81fcm")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PriorityNum" type="Button" parent="TeamsContainer/Team4"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 102.0
+offset_top = -54.0
+offset_right = 180.0
+offset_bottom = -17.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("3_1mjwn")
+theme_override_font_sizes/font_size = 30
+text = "-"
+script = ExtResource("4_h8n6u")
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = -39.0
+offset_right = -19.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Back" type="Button" parent="Buttons"]
+layout_mode = 2
+offset_right = 60.0
+offset_bottom = 20.0
+theme = ExtResource("3_1mjwn")
+text = "VOLVER"
+
+[node name="Control" type="Control" parent="Buttons"]
+clip_contents = true
+layout_mode = 2
+anchors_preset = 0
+offset_left = 65.0
+offset_top = 10.0
+offset_right = 1214.0
+offset_bottom = 10.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.17
+
+[node name="Accept" type="Button" parent="Buttons"]
+layout_mode = 2
+offset_left = 1219.0
+offset_right = 1314.0
+offset_bottom = 20.0
+theme = ExtResource("3_1mjwn")
+text = "CONFIRMAR"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -349.0
+offset_top = -266.0
+offset_right = 349.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Elegir posiciones en caso de empate:"
+label_settings = SubResource("LabelSettings_81fcm")
+
+[connection signal="check" from="TeamsContainer/Team1/PriorityNum" to="." method="_on_priority_num_check"]
+[connection signal="pressed" from="TeamsContainer/Team1/PriorityNum" to="TeamsContainer/Team1/PriorityNum" method="_on_pressed"]
+[connection signal="check" from="TeamsContainer/Team2/PriorityNum" to="." method="_on_priority_num_check"]
+[connection signal="pressed" from="TeamsContainer/Team2/PriorityNum" to="TeamsContainer/Team2/PriorityNum" method="_on_pressed"]
+[connection signal="check" from="TeamsContainer/Team3/PriorityNum" to="." method="_on_priority_num_check"]
+[connection signal="pressed" from="TeamsContainer/Team3/PriorityNum" to="TeamsContainer/Team3/PriorityNum" method="_on_pressed"]
+[connection signal="check" from="TeamsContainer/Team4/PriorityNum" to="." method="_on_priority_num_check"]
+[connection signal="pressed" from="TeamsContainer/Team4/PriorityNum" to="TeamsContainer/Team4/PriorityNum" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Buttons/Accept" to="." method="_on_accept_pressed"]

@@ -1,0 +1,55 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://d1orvoggt0gkb"]
+
+[ext_resource type="FontFile" uid="uid://h2gu4xw8htn6" path="res://fonts/Qatar2022-Medium.otf" id="1_r8ws2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uxcm2"]
+bg_color = Color(0.603922, 0.0588235, 0.192157, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_me7hc"]
+bg_color = Color(0.603922, 0.0588235, 0.192157, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mrn85"]
+bg_color = Color(0.929412, 0.929412, 0.929412, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stdsr"]
+bg_color = Color(0.603922, 0.0588235, 0.192157, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3rpof"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_right = 2
+border_color = Color(0.439216, 0.0980392, 0.239216, 1)
+
+[resource]
+Button/colors/font_color = Color(0.439216, 0.0980392, 0.239216, 1)
+Button/constants/outline_size = 1
+Button/fonts/font = ExtResource("1_r8ws2")
+Button/styles/focus = SubResource("StyleBoxFlat_uxcm2")
+Button/styles/hover = SubResource("StyleBoxFlat_me7hc")
+Button/styles/normal = SubResource("StyleBoxFlat_mrn85")
+Button/styles/pressed = SubResource("StyleBoxFlat_stdsr")
+Label/fonts/font = ExtResource("1_r8ws2")
+LineEdit/colors/clear_button_color = Color(0.603922, 0.0588235, 0.192157, 1)
+LineEdit/colors/font_color = Color(0.603922, 0.0588235, 0.192157, 1)
+LineEdit/colors/font_placeholder_color = Color(0.439216, 0.0980392, 0.239216, 0.619608)
+LineEdit/fonts/font = ExtResource("1_r8ws2")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_3rpof")

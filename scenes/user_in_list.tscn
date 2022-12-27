@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjkif86us0vu6"]
+
+[ext_resource type="Theme" uid="uid://d1orvoggt0gkb" path="res://themes/qatar_theme.tres" id="1_l3mrd"]
+[ext_resource type="Script" path="res://logic/user_in_list.gd" id="2_f08ux"]
+
+[node name="UserInList" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_l3mrd")
+script = ExtResource("2_f08ux")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

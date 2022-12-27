@@ -1,0 +1,1967 @@
+[gd_scene load_steps=18 format=3 uid="uid://bw6mpkw6t35km"]
+
+[ext_resource type="Script" path="res://logic/update.gd" id="1_xrxe3"]
+[ext_resource type="Texture2D" uid="uid://donfxb5nn0teh" path="res://images/update_background.png" id="2_lxrtq"]
+[ext_resource type="Texture2D" uid="uid://pk8ueefow7u7" path="res://images/update_team.png" id="3_k6hpf"]
+[ext_resource type="Theme" uid="uid://d1orvoggt0gkb" path="res://themes/qatar_theme.tres" id="4_cgvqf"]
+[ext_resource type="Script" path="res://logic/accept.gd" id="5_6wkcp"]
+[ext_resource type="Script" path="res://logic/round_of_16.gd" id="6_xxm21"]
+[ext_resource type="Script" path="res://logic/update_match.gd" id="7_hp78q"]
+[ext_resource type="FontFile" uid="uid://h2gu4xw8htn6" path="res://fonts/Qatar2022-Medium.otf" id="8_s3ftf"]
+[ext_resource type="Script" path="res://logic/team_goals.gd" id="9_yetsx"]
+[ext_resource type="Script" path="res://logic/quarters.gd" id="10_vytty"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dboh5"]
+font = ExtResource("8_s3ftf")
+font_color = Color(0.537255, 0.121569, 0.231373, 1)
+
+[sub_resource type="StyleBox" id="StyleBox_ktuwu"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = -1.0
+content_margin_top = -1.0
+content_margin_right = -1.0
+content_margin_bottom = -1.0
+
+[sub_resource type="Theme" id="Theme_4t1ow"]
+LineEdit/colors/caret_color = Color(0.537255, 0.121569, 0.231373, 1)
+LineEdit/styles/focus = SubResource("StyleBox_ktuwu")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5nw1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.537255, 0.121569, 0.231373, 1)
+corner_radius_top_left = 12
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50t5h"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 7
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.996078, 0.972549, 0.972549, 1)
+corner_radius_top_left = 12
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 12
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 4.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nrtko"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2xaqn"]
+font = ExtResource("8_s3ftf")
+font_color = Color(0.537255, 0.121569, 0.231373, 1)
+
+[node name="Update" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xrxe3")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -680.0
+offset_top = -384.0
+offset_right = 680.0
+offset_bottom = 384.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lxrtq")
+
+[node name="UpdateBack" type="TextureRect" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.421
+anchor_top = 0.5
+anchor_right = 0.421
+anchor_bottom = 0.5
+offset_left = -572.56
+offset_top = -384.0
+offset_right = 787.44
+offset_bottom = 384.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_k6hpf")
+
+[node name="Button" type="Button" parent="UpdateBack"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -632.0
+offset_top = 10.0
+offset_right = -359.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_cgvqf")
+text = "PLACEHOLDER"
+
+[node name="Button2" type="Button" parent="UpdateBack"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -296.0
+offset_top = 10.0
+offset_right = -23.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_cgvqf")
+text = "PLACEHOLDER"
+
+[node name="Button3" type="Button" parent="UpdateBack"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 41.0
+offset_top = 9.0
+offset_right = 314.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_cgvqf")
+text = "PLACEHOLDER"
+
+[node name="Button4" type="Button" parent="UpdateBack"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 365.0
+offset_top = 9.0
+offset_right = 638.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_cgvqf")
+text = "PLACEHOLDER"
+
+[node name="BackAccept" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BackAcceptContainer" type="HBoxContainer" parent="BackAccept"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -34.0
+offset_right = -25.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="Back" type="Button" parent="BackAccept/BackAcceptContainer"]
+offset_right = 48.0
+offset_bottom = 21.0
+theme = ExtResource("4_cgvqf")
+text = "Volver"
+
+[node name="Control" type="Control" parent="BackAccept/BackAcceptContainer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 48.0
+offset_right = 1233.0
+offset_bottom = 21.0
+size_flags_horizontal = 3
+
+[node name="Accept" type="Button" parent="BackAccept/BackAcceptContainer"]
+offset_left = 1233.0
+offset_right = 1310.0
+offset_bottom = 21.0
+size_flags_horizontal = 8
+theme = ExtResource("4_cgvqf")
+text = "Confirmar"
+script = ExtResource("5_6wkcp")
+
+[node name="RoundOf16" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_xxm21")
+
+[node name="Match1" type="Control" parent="RoundOf16"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -630.0
+offset_top = -253.0
+offset_right = -323.0
+offset_bottom = -218.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_hp78q")
+
+[node name="Team1" type="Label" parent="RoundOf16/Match1"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.5
+offset_right = 122.0
+offset_bottom = 14.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 0
+text = "PLACEHOLDER"
+label_settings = SubResource("LabelSettings_dboh5")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Team1Goals" type="LineEdit" parent="RoundOf16/Match1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -14.5
+offset_right = -4.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+alignment = 2
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block1" type="Control" parent="RoundOf16/Match1"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 123.0
+offset_bottom = 39.0
+
+[node name="ButtonTeam1" type="Button" parent="RoundOf16/Match1"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -15.5
+offset_right = 124.0
+offset_bottom = 13.5
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="Team2" type="Label" parent="RoundOf16/Match1"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -13.5
+offset_bottom = 14.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "PLACEHOLDER"
+label_settings = SubResource("LabelSettings_2xaqn")
+vertical_alignment = 1
+
+[node name="Team2Goals" type="LineEdit" parent="RoundOf16/Match1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 2.5
+offset_top = -14.5
+offset_right = 63.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block2" type="Control" parent="RoundOf16/Match1"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 180.0
+offset_top = 4.0
+offset_right = 299.0
+offset_bottom = 29.0
+
+[node name="ButtonTeam2" type="Button" parent="RoundOf16/Match1"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 300.0
+offset_top = 13.5
+offset_right = 420.0
+offset_bottom = 42.5
+grow_vertical = 2
+rotation = 3.14289
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="Match2" type="Control" parent="RoundOf16"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = -258.0
+offset_right = -9.0
+offset_bottom = -213.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_hp78q")
+
+[node name="Team1" type="Label" parent="RoundOf16/Match2"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.5
+offset_right = 122.0
+offset_bottom = 14.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 0
+text = "PLACEHOLDER"
+label_settings = SubResource("LabelSettings_dboh5")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Team1Goals" type="LineEdit" parent="RoundOf16/Match2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -14.5
+offset_right = -4.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+alignment = 2
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block1" type="Control" parent="RoundOf16/Match2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 122.0
+offset_bottom = 39.0
+
+[node name="Team2" type="Label" parent="RoundOf16/Match2"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -13.5
+offset_bottom = 14.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "PLACEHOLDER"
+label_settings = SubResource("LabelSettings_2xaqn")
+vertical_alignment = 1
+
+[node name="Team2Goals" type="LineEdit" parent="RoundOf16/Match2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.5
+offset_top = -14.5
+offset_right = 63.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block2" type="Control" parent="RoundOf16/Match2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 178.0
+offset_top = 4.0
+offset_right = 299.0
+offset_bottom = 40.0
+
+[node name="ButtonTeam1" type="Button" parent="RoundOf16/Match2"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -15.5
+offset_right = 123.0
+offset_bottom = 13.5
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="ButtonTeam2" type="Button" parent="RoundOf16/Match2"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 298.0
+offset_top = 12.5
+offset_right = 418.0
+offset_bottom = 40.5
+grow_vertical = 2
+rotation = 3.14186
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="Match3" type="Control" parent="RoundOf16"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -258.0
+offset_right = 311.0
+offset_bottom = -213.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_hp78q")
+
+[node name="Team1" type="Label" parent="RoundOf16/Match3"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.5
+offset_right = 122.0
+offset_bottom = 14.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 0
+text = "PLACEHOLDER"
+label_settings = SubResource("LabelSettings_dboh5")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Team1Goals" type="LineEdit" parent="RoundOf16/Match3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -14.5
+offset_right = -4.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+alignment = 2
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block1" type="Control" parent="RoundOf16/Match3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 122.0
+offset_bottom = 39.0
+
+[node name="Team2" type="Label" parent="RoundOf16/Match3"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -13.5
+offset_bottom = 14.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "PLACEHOLDER"
+label_settings = SubResource("LabelSettings_2xaqn")
+vertical_alignment = 1
+
+[node name="Team2Goals" type="LineEdit" parent="RoundOf16/Match3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.5
+offset_top = -14.5
+offset_right = 63.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block2" type="Control" parent="RoundOf16/Match3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 178.0
+offset_top = 4.0
+offset_right = 299.0
+offset_bottom = 40.0
+
+[node name="ButtonTeam1" type="Button" parent="RoundOf16/Match3"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -15.5
+offset_right = 122.0
+offset_bottom = 13.5
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="ButtonTeam2" type="Button" parent="RoundOf16/Match3"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 296.0
+offset_top = 13.5
+offset_right = 415.0
+offset_bottom = 42.5
+grow_vertical = 2
+rotation = 3.14159
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="Match4" type="Control" parent="RoundOf16"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 328.0
+offset_top = -258.0
+offset_right = 629.0
+offset_bottom = -213.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_hp78q")
+
+[node name="Team1" type="Label" parent="RoundOf16/Match4"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.5
+offset_right = 122.0
+offset_bottom = 14.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 0
+text = "PLACEHOLDER"
+label_settings = SubResource("LabelSettings_dboh5")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Team1Goals" type="LineEdit" parent="RoundOf16/Match4"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -14.5
+offset_right = -4.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+alignment = 2
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block1" type="Control" parent="RoundOf16/Match4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 122.0
+offset_bottom = 39.0
+
+[node name="Team2" type="Label" parent="RoundOf16/Match4"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -13.5
+offset_bottom = 14.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "PLACEHOLDER"
+label_settings = SubResource("LabelSettings_2xaqn")
+vertical_alignment = 1
+
+[node name="Team2Goals" type="LineEdit" parent="RoundOf16/Match4"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.5
+offset_top = -14.5
+offset_right = 63.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block2" type="Control" parent="RoundOf16/Match4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 178.0
+offset_top = 4.0
+offset_right = 299.0
+offset_bottom = 40.0
+
+[node name="ButtonTeam1" type="Button" parent="RoundOf16/Match4"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -15.5
+offset_right = 123.0
+offset_bottom = 13.5
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="ButtonTeam2" type="Button" parent="RoundOf16/Match4"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 296.0
+offset_top = 13.5
+offset_right = 415.0
+offset_bottom = 42.5
+grow_vertical = 2
+rotation = 3.14159
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="Match5" type="Control" parent="RoundOf16"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -629.0
+offset_top = 236.0
+offset_right = -328.0
+offset_bottom = 281.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_hp78q")
+
+[node name="Team1" type="Label" parent="RoundOf16/Match5"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.5
+offset_right = 122.0
+offset_bottom = 14.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 0
+text = "PLACEHOLDER"
+label_settings = SubResource("LabelSettings_dboh5")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Team1Goals" type="LineEdit" parent="RoundOf16/Match5"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -14.5
+offset_right = -4.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+alignment = 2
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block1" type="Control" parent="RoundOf16/Match5"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 122.0
+offset_bottom = 39.0
+
+[node name="Team2" type="Label" parent="RoundOf16/Match5"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -13.5
+offset_bottom = 14.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "PLACEHOLDER"
+label_settings = SubResource("LabelSettings_2xaqn")
+vertical_alignment = 1
+
+[node name="Team2Goals" type="LineEdit" parent="RoundOf16/Match5"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.5
+offset_top = -14.5
+offset_right = 63.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block2" type="Control" parent="RoundOf16/Match5"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 178.0
+offset_top = 4.0
+offset_right = 299.0
+offset_bottom = 40.0
+
+[node name="ButtonTeam1" type="Button" parent="RoundOf16/Match5"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -15.5
+offset_right = 123.0
+offset_bottom = 13.5
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="ButtonTeam2" type="Button" parent="RoundOf16/Match5"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 295.0
+offset_top = 13.5
+offset_right = 413.0
+offset_bottom = 42.5
+grow_vertical = 2
+rotation = 3.14159
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="Match6" type="Control" parent="RoundOf16"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -311.0
+offset_top = 236.0
+offset_right = -10.0
+offset_bottom = 281.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_hp78q")
+
+[node name="Team1" type="Label" parent="RoundOf16/Match6"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.5
+offset_right = 122.0
+offset_bottom = 14.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 0
+text = "PLACEHOLDER"
+label_settings = SubResource("LabelSettings_dboh5")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Team1Goals" type="LineEdit" parent="RoundOf16/Match6"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -14.5
+offset_right = -4.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+alignment = 2
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block1" type="Control" parent="RoundOf16/Match6"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 122.0
+offset_bottom = 39.0
+
+[node name="Team2" type="Label" parent="RoundOf16/Match6"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -13.5
+offset_bottom = 14.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "PLACEHOLDER"
+label_settings = SubResource("LabelSettings_2xaqn")
+vertical_alignment = 1
+
+[node name="Team2Goals" type="LineEdit" parent="RoundOf16/Match6"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.5
+offset_top = -14.5
+offset_right = 63.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block2" type="Control" parent="RoundOf16/Match6"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 178.0
+offset_top = 4.0
+offset_right = 299.0
+offset_bottom = 40.0
+
+[node name="ButtonTeam1" type="Button" parent="RoundOf16/Match6"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -15.5
+offset_right = 123.0
+offset_bottom = 13.5
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="ButtonTeam2" type="Button" parent="RoundOf16/Match6"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 297.0
+offset_top = 13.5
+offset_right = 417.0
+offset_bottom = 42.5
+grow_vertical = 2
+rotation = 3.14159
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="Match7" type="Control" parent="RoundOf16"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = 236.0
+offset_right = 310.0
+offset_bottom = 281.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_hp78q")
+
+[node name="Team1" type="Label" parent="RoundOf16/Match7"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.5
+offset_right = 122.0
+offset_bottom = 14.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 0
+text = "PLACEHOLDER"
+label_settings = SubResource("LabelSettings_dboh5")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Team1Goals" type="LineEdit" parent="RoundOf16/Match7"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -14.5
+offset_right = -4.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+alignment = 2
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block1" type="Control" parent="RoundOf16/Match7"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 122.0
+offset_bottom = 39.0
+
+[node name="Team2" type="Label" parent="RoundOf16/Match7"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -13.5
+offset_bottom = 14.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "PLACEHOLDER"
+label_settings = SubResource("LabelSettings_2xaqn")
+vertical_alignment = 1
+
+[node name="Team2Goals" type="LineEdit" parent="RoundOf16/Match7"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.5
+offset_top = -14.5
+offset_right = 63.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block2" type="Control" parent="RoundOf16/Match7"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 178.0
+offset_top = 4.0
+offset_right = 299.0
+offset_bottom = 40.0
+
+[node name="ButtonTeam1" type="Button" parent="RoundOf16/Match7"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -15.5
+offset_right = 123.0
+offset_bottom = 13.5
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="ButtonTeam2" type="Button" parent="RoundOf16/Match7"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 295.0
+offset_top = 13.5
+offset_right = 413.0
+offset_bottom = 42.5
+grow_vertical = 2
+rotation = 3.14159
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="Match8" type="Control" parent="RoundOf16"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 327.0
+offset_top = 236.0
+offset_right = 628.0
+offset_bottom = 281.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_hp78q")
+
+[node name="Team1" type="Label" parent="RoundOf16/Match8"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.5
+offset_right = 122.0
+offset_bottom = 14.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 0
+text = "PLACEHOLDER"
+label_settings = SubResource("LabelSettings_dboh5")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Team1Goals" type="LineEdit" parent="RoundOf16/Match8"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -14.5
+offset_right = -4.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+alignment = 2
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block1" type="Control" parent="RoundOf16/Match8"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 122.0
+offset_bottom = 39.0
+
+[node name="Team2" type="Label" parent="RoundOf16/Match8"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -13.5
+offset_bottom = 14.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "PLACEHOLDER"
+label_settings = SubResource("LabelSettings_2xaqn")
+vertical_alignment = 1
+
+[node name="Team2Goals" type="LineEdit" parent="RoundOf16/Match8"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.5
+offset_top = -14.5
+offset_right = 63.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block2" type="Control" parent="RoundOf16/Match8"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 178.0
+offset_top = 4.0
+offset_right = 299.0
+offset_bottom = 40.0
+
+[node name="ButtonTeam1" type="Button" parent="RoundOf16/Match8"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -15.5
+offset_right = 123.0
+offset_bottom = 13.5
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="ButtonTeam2" type="Button" parent="RoundOf16/Match8"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 295.0
+offset_top = 13.5
+offset_right = 413.0
+offset_bottom = 42.5
+grow_vertical = 2
+rotation = 3.14159
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="Quarters" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_vytty")
+
+[node name="Match1" type="Control" parent="Quarters"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -336.0
+offset_top = -171.0
+offset_right = -23.0
+offset_bottom = -134.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_hp78q")
+
+[node name="Team1" type="Label" parent="Quarters/Match1"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.5
+offset_right = 126.0
+offset_bottom = 14.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 0
+label_settings = SubResource("LabelSettings_dboh5")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Team1Goals" type="LineEdit" parent="Quarters/Match1"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -14.5
+offset_right = -4.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+alignment = 2
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block1" type="Control" parent="Quarters/Match1"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 127.0
+offset_bottom = 34.0
+
+[node name="Team2" type="Label" parent="Quarters/Match1"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -13.5
+offset_bottom = 14.5
+grow_horizontal = 0
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_2xaqn")
+vertical_alignment = 1
+
+[node name="Team2Goals" type="LineEdit" parent="Quarters/Match1"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.5
+offset_top = -14.5
+offset_right = 63.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block2" type="Control" parent="Quarters/Match1"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 185.0
+offset_top = 4.0
+offset_right = 299.0
+offset_bottom = 33.0
+metadata/_edit_group_ = true
+
+[node name="ButtonTeam1" type="Button" parent="Quarters/Match1"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -16.5
+offset_right = 126.0
+offset_bottom = 12.5
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="ButtonTeam2" type="Button" parent="Quarters/Match1"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 310.0
+offset_top = 12.5
+offset_right = 434.0
+offset_bottom = 41.5
+grow_vertical = 2
+rotation = 3.14159
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="Match2" type="Control" parent="Quarters"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -171.0
+offset_right = 336.0
+offset_bottom = -134.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_hp78q")
+
+[node name="Team1" type="Label" parent="Quarters/Match2"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.5
+offset_right = 126.0
+offset_bottom = 14.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 0
+label_settings = SubResource("LabelSettings_dboh5")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Team1Goals" type="LineEdit" parent="Quarters/Match2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -14.5
+offset_right = -4.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+alignment = 2
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block1" type="Control" parent="Quarters/Match2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 127.0
+offset_bottom = 34.0
+
+[node name="Team2" type="Label" parent="Quarters/Match2"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -13.5
+offset_bottom = 14.5
+grow_horizontal = 0
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_2xaqn")
+vertical_alignment = 1
+
+[node name="Team2Goals" type="LineEdit" parent="Quarters/Match2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.5
+offset_top = -14.5
+offset_right = 63.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block2" type="Control" parent="Quarters/Match2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 185.0
+offset_top = 4.0
+offset_right = 299.0
+offset_bottom = 33.0
+metadata/_edit_group_ = true
+
+[node name="ButtonTeam1" type="Button" parent="Quarters/Match2"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -16.5
+offset_right = 126.0
+offset_bottom = 12.5
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="ButtonTeam2" type="Button" parent="Quarters/Match2"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 310.0
+offset_top = 12.5
+offset_right = 434.0
+offset_bottom = 41.5
+grow_vertical = 2
+rotation = 3.14159
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="Match3" type="Control" parent="Quarters"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -337.0
+offset_top = 159.0
+offset_right = -24.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_hp78q")
+
+[node name="Team1" type="Label" parent="Quarters/Match3"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.5
+offset_right = 126.0
+offset_bottom = 14.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 0
+label_settings = SubResource("LabelSettings_dboh5")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Team1Goals" type="LineEdit" parent="Quarters/Match3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -14.5
+offset_right = -4.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+alignment = 2
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block1" type="Control" parent="Quarters/Match3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 127.0
+offset_bottom = 34.0
+
+[node name="Team2" type="Label" parent="Quarters/Match3"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -13.5
+offset_bottom = 14.5
+grow_horizontal = 0
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_2xaqn")
+vertical_alignment = 1
+
+[node name="Team2Goals" type="LineEdit" parent="Quarters/Match3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.5
+offset_top = -14.5
+offset_right = 63.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block2" type="Control" parent="Quarters/Match3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 185.0
+offset_top = 4.0
+offset_right = 299.0
+offset_bottom = 33.0
+metadata/_edit_group_ = true
+
+[node name="ButtonTeam1" type="Button" parent="Quarters/Match3"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -16.5
+offset_right = 126.0
+offset_bottom = 12.5
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="ButtonTeam2" type="Button" parent="Quarters/Match3"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 310.0
+offset_top = 12.5
+offset_right = 434.0
+offset_bottom = 41.5
+grow_vertical = 2
+rotation = 3.14159
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="Match4" type="Control" parent="Quarters"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 22.0
+offset_top = 159.0
+offset_right = 335.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_hp78q")
+
+[node name="Team1" type="Label" parent="Quarters/Match4"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.5
+offset_right = 126.0
+offset_bottom = 14.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 0
+label_settings = SubResource("LabelSettings_dboh5")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Team1Goals" type="LineEdit" parent="Quarters/Match4"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -14.5
+offset_right = -4.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+alignment = 2
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block1" type="Control" parent="Quarters/Match4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 127.0
+offset_bottom = 34.0
+
+[node name="Team2" type="Label" parent="Quarters/Match4"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -13.5
+offset_bottom = 14.5
+grow_horizontal = 0
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_2xaqn")
+vertical_alignment = 1
+
+[node name="Team2Goals" type="LineEdit" parent="Quarters/Match4"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.5
+offset_top = -14.5
+offset_right = 63.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4t1ow")
+theme_override_colors/font_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_selected_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_uneditable_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_colors/font_placeholder_color = Color(0.541176, 0.109804, 0.243137, 1)
+theme_override_fonts/font = ExtResource("8_s3ftf")
+theme_override_font_sizes/font_size = 15
+placeholder_text = "-"
+max_length = 2
+flat = true
+script = ExtResource("9_yetsx")
+
+[node name="Block2" type="Control" parent="Quarters/Match4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 185.0
+offset_top = 4.0
+offset_right = 299.0
+offset_bottom = 33.0
+metadata/_edit_group_ = true
+
+[node name="ButtonTeam1" type="Button" parent="Quarters/Match4"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -16.5
+offset_right = 127.0
+offset_bottom = 12.5
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[node name="ButtonTeam2" type="Button" parent="Quarters/Match4"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 310.0
+offset_top = 12.5
+offset_right = 433.0
+offset_bottom = 41.5
+grow_vertical = 2
+rotation = 3.14159
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5nw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50t5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nrtko")
+
+[connection signal="pressed" from="UpdateBack/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="UpdateBack/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="UpdateBack/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="UpdateBack/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="BackAccept/BackAcceptContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="BackAccept/BackAcceptContainer/Accept" to="." method="_on_accept_pressed"]
+[connection signal="change_team" from="RoundOf16/Match1" to="." method="_on_match_1_change_team"]
+[connection signal="goals_setted" from="RoundOf16/Match1" to="." method="_on_match_goals_setted"]
+[connection signal="goals_setted" from="RoundOf16/Match1/Team1Goals" to="RoundOf16/Match1" method="_on_team_1_goals_goals_setted"]
+[connection signal="text_changed" from="RoundOf16/Match1/Team1Goals" to="RoundOf16/Match1/Team1Goals" method="_on_text_changed"]
+[connection signal="pressed" from="RoundOf16/Match1/ButtonTeam1" to="RoundOf16/Match1" method="_on_button_team_1_pressed"]
+[connection signal="goals_setted" from="RoundOf16/Match1/Team2Goals" to="RoundOf16/Match1" method="_on_team_2_goals_goals_setted"]
+[connection signal="text_changed" from="RoundOf16/Match1/Team2Goals" to="RoundOf16/Match1/Team2Goals" method="_on_text_changed"]
+[connection signal="pressed" from="RoundOf16/Match1/ButtonTeam2" to="RoundOf16/Match1" method="_on_button_team_2_pressed"]
+[connection signal="change_team" from="RoundOf16/Match2" to="." method="_on_match_1_change_team"]
+[connection signal="goals_setted" from="RoundOf16/Match2" to="." method="_on_match_goals_setted"]
+[connection signal="goals_setted" from="RoundOf16/Match2/Team1Goals" to="RoundOf16/Match2" method="_on_team_1_goals_goals_setted"]
+[connection signal="text_changed" from="RoundOf16/Match2/Team1Goals" to="RoundOf16/Match2/Team1Goals" method="_on_text_changed"]
+[connection signal="goals_setted" from="RoundOf16/Match2/Team2Goals" to="RoundOf16/Match2" method="_on_team_2_goals_goals_setted"]
+[connection signal="text_changed" from="RoundOf16/Match2/Team2Goals" to="RoundOf16/Match2/Team2Goals" method="_on_text_changed"]
+[connection signal="pressed" from="RoundOf16/Match2/ButtonTeam1" to="RoundOf16/Match2" method="_on_button_team_1_pressed"]
+[connection signal="pressed" from="RoundOf16/Match2/ButtonTeam2" to="RoundOf16/Match2" method="_on_button_team_2_pressed"]
+[connection signal="change_team" from="RoundOf16/Match3" to="." method="_on_match_1_change_team"]
+[connection signal="goals_setted" from="RoundOf16/Match3" to="." method="_on_match_goals_setted"]
+[connection signal="goals_setted" from="RoundOf16/Match3/Team1Goals" to="RoundOf16/Match3" method="_on_team_1_goals_goals_setted"]
+[connection signal="text_changed" from="RoundOf16/Match3/Team1Goals" to="RoundOf16/Match3/Team1Goals" method="_on_text_changed"]
+[connection signal="goals_setted" from="RoundOf16/Match3/Team2Goals" to="RoundOf16/Match3" method="_on_team_2_goals_goals_setted"]
+[connection signal="text_changed" from="RoundOf16/Match3/Team2Goals" to="RoundOf16/Match3/Team2Goals" method="_on_text_changed"]
+[connection signal="pressed" from="RoundOf16/Match3/ButtonTeam1" to="RoundOf16/Match3" method="_on_button_team_1_pressed"]
+[connection signal="pressed" from="RoundOf16/Match3/ButtonTeam2" to="RoundOf16/Match3" method="_on_button_team_2_pressed"]
+[connection signal="change_team" from="RoundOf16/Match4" to="." method="_on_match_1_change_team"]
+[connection signal="goals_setted" from="RoundOf16/Match4" to="." method="_on_match_goals_setted"]
+[connection signal="goals_setted" from="RoundOf16/Match4/Team1Goals" to="RoundOf16/Match4" method="_on_team_1_goals_goals_setted"]
+[connection signal="text_changed" from="RoundOf16/Match4/Team1Goals" to="RoundOf16/Match4/Team1Goals" method="_on_text_changed"]
+[connection signal="goals_setted" from="RoundOf16/Match4/Team2Goals" to="RoundOf16/Match4" method="_on_team_2_goals_goals_setted"]
+[connection signal="text_changed" from="RoundOf16/Match4/Team2Goals" to="RoundOf16/Match4/Team2Goals" method="_on_text_changed"]
+[connection signal="pressed" from="RoundOf16/Match4/ButtonTeam1" to="RoundOf16/Match4" method="_on_button_team_1_pressed"]
+[connection signal="pressed" from="RoundOf16/Match4/ButtonTeam2" to="RoundOf16/Match4" method="_on_button_team_2_pressed"]
+[connection signal="change_team" from="RoundOf16/Match5" to="." method="_on_match_1_change_team"]
+[connection signal="goals_setted" from="RoundOf16/Match5" to="." method="_on_match_goals_setted"]
+[connection signal="goals_setted" from="RoundOf16/Match5/Team1Goals" to="RoundOf16/Match5" method="_on_team_1_goals_goals_setted"]
+[connection signal="text_changed" from="RoundOf16/Match5/Team1Goals" to="RoundOf16/Match5/Team1Goals" method="_on_text_changed"]
+[connection signal="goals_setted" from="RoundOf16/Match5/Team2Goals" to="RoundOf16/Match5" method="_on_team_2_goals_goals_setted"]
+[connection signal="text_changed" from="RoundOf16/Match5/Team2Goals" to="RoundOf16/Match5/Team2Goals" method="_on_text_changed"]
+[connection signal="pressed" from="RoundOf16/Match5/ButtonTeam1" to="RoundOf16/Match5" method="_on_button_team_1_pressed"]
+[connection signal="pressed" from="RoundOf16/Match5/ButtonTeam2" to="RoundOf16/Match5" method="_on_button_team_2_pressed"]
+[connection signal="change_team" from="RoundOf16/Match6" to="." method="_on_match_1_change_team"]
+[connection signal="goals_setted" from="RoundOf16/Match6" to="." method="_on_match_goals_setted"]
+[connection signal="goals_setted" from="RoundOf16/Match6/Team1Goals" to="RoundOf16/Match6" method="_on_team_1_goals_goals_setted"]
+[connection signal="text_changed" from="RoundOf16/Match6/Team1Goals" to="RoundOf16/Match6/Team1Goals" method="_on_text_changed"]
+[connection signal="goals_setted" from="RoundOf16/Match6/Team2Goals" to="RoundOf16/Match6" method="_on_team_2_goals_goals_setted"]
+[connection signal="text_changed" from="RoundOf16/Match6/Team2Goals" to="RoundOf16/Match6/Team2Goals" method="_on_text_changed"]
+[connection signal="pressed" from="RoundOf16/Match6/ButtonTeam1" to="RoundOf16/Match6" method="_on_button_team_1_pressed"]
+[connection signal="pressed" from="RoundOf16/Match6/ButtonTeam2" to="RoundOf16/Match6" method="_on_button_team_2_pressed"]
+[connection signal="change_team" from="RoundOf16/Match7" to="." method="_on_match_1_change_team"]
+[connection signal="goals_setted" from="RoundOf16/Match7" to="." method="_on_match_goals_setted"]
+[connection signal="goals_setted" from="RoundOf16/Match7/Team1Goals" to="RoundOf16/Match7" method="_on_team_1_goals_goals_setted"]
+[connection signal="text_changed" from="RoundOf16/Match7/Team1Goals" to="RoundOf16/Match7/Team1Goals" method="_on_text_changed"]
+[connection signal="goals_setted" from="RoundOf16/Match7/Team2Goals" to="RoundOf16/Match7" method="_on_team_2_goals_goals_setted"]
+[connection signal="text_changed" from="RoundOf16/Match7/Team2Goals" to="RoundOf16/Match7/Team2Goals" method="_on_text_changed"]
+[connection signal="pressed" from="RoundOf16/Match7/ButtonTeam1" to="RoundOf16/Match7" method="_on_button_team_1_pressed"]
+[connection signal="pressed" from="RoundOf16/Match7/ButtonTeam2" to="RoundOf16/Match7" method="_on_button_team_2_pressed"]
+[connection signal="change_team" from="RoundOf16/Match8" to="." method="_on_match_1_change_team"]
+[connection signal="goals_setted" from="RoundOf16/Match8" to="." method="_on_match_goals_setted"]
+[connection signal="goals_setted" from="RoundOf16/Match8/Team1Goals" to="RoundOf16/Match8" method="_on_team_1_goals_goals_setted"]
+[connection signal="text_changed" from="RoundOf16/Match8/Team1Goals" to="RoundOf16/Match8/Team1Goals" method="_on_text_changed"]
+[connection signal="goals_setted" from="RoundOf16/Match8/Team2Goals" to="RoundOf16/Match8" method="_on_team_2_goals_goals_setted"]
+[connection signal="text_changed" from="RoundOf16/Match8/Team2Goals" to="RoundOf16/Match8/Team2Goals" method="_on_text_changed"]
+[connection signal="pressed" from="RoundOf16/Match8/ButtonTeam1" to="RoundOf16/Match8" method="_on_button_team_1_pressed"]
+[connection signal="pressed" from="RoundOf16/Match8/ButtonTeam2" to="RoundOf16/Match8" method="_on_button_team_2_pressed"]
+[connection signal="change_team" from="Quarters/Match1" to="." method="_on_match_1_change_team"]
+[connection signal="goals_setted" from="Quarters/Match1" to="." method="_on_match_goals_setted"]
+[connection signal="goals_setted" from="Quarters/Match1/Team1Goals" to="Quarters/Match1" method="_on_team_1_goals_goals_setted"]
+[connection signal="text_changed" from="Quarters/Match1/Team1Goals" to="Quarters/Match1/Team1Goals" method="_on_text_changed"]
+[connection signal="goals_setted" from="Quarters/Match1/Team2Goals" to="Quarters/Match1" method="_on_team_2_goals_goals_setted"]
+[connection signal="text_changed" from="Quarters/Match1/Team2Goals" to="Quarters/Match1/Team2Goals" method="_on_text_changed"]
+[connection signal="pressed" from="Quarters/Match1/ButtonTeam1" to="Quarters/Match1" method="_on_button_team_1_pressed"]
+[connection signal="pressed" from="Quarters/Match1/ButtonTeam2" to="Quarters/Match1" method="_on_button_team_2_pressed"]
+[connection signal="change_team" from="Quarters/Match2" to="." method="_on_match_1_change_team"]
+[connection signal="goals_setted" from="Quarters/Match2" to="." method="_on_match_goals_setted"]
+[connection signal="goals_setted" from="Quarters/Match2/Team1Goals" to="Quarters/Match2" method="_on_team_1_goals_goals_setted"]
+[connection signal="text_changed" from="Quarters/Match2/Team1Goals" to="Quarters/Match2/Team1Goals" method="_on_text_changed"]
+[connection signal="goals_setted" from="Quarters/Match2/Team2Goals" to="Quarters/Match2" method="_on_team_2_goals_goals_setted"]
+[connection signal="text_changed" from="Quarters/Match2/Team2Goals" to="Quarters/Match2/Team2Goals" method="_on_text_changed"]
+[connection signal="pressed" from="Quarters/Match2/ButtonTeam1" to="Quarters/Match2" method="_on_button_team_1_pressed"]
+[connection signal="pressed" from="Quarters/Match2/ButtonTeam2" to="Quarters/Match2" method="_on_button_team_2_pressed"]
+[connection signal="change_team" from="Quarters/Match3" to="." method="_on_match_1_change_team"]
+[connection signal="goals_setted" from="Quarters/Match3" to="." method="_on_match_goals_setted"]
+[connection signal="goals_setted" from="Quarters/Match3/Team1Goals" to="Quarters/Match3" method="_on_team_1_goals_goals_setted"]
+[connection signal="text_changed" from="Quarters/Match3/Team1Goals" to="Quarters/Match3/Team1Goals" method="_on_text_changed"]
+[connection signal="goals_setted" from="Quarters/Match3/Team2Goals" to="Quarters/Match3" method="_on_team_2_goals_goals_setted"]
+[connection signal="text_changed" from="Quarters/Match3/Team2Goals" to="Quarters/Match3/Team2Goals" method="_on_text_changed"]
+[connection signal="pressed" from="Quarters/Match3/ButtonTeam1" to="Quarters/Match3" method="_on_button_team_1_pressed"]
+[connection signal="pressed" from="Quarters/Match3/ButtonTeam2" to="Quarters/Match3" method="_on_button_team_2_pressed"]
+[connection signal="change_team" from="Quarters/Match4" to="." method="_on_match_1_change_team"]
+[connection signal="goals_setted" from="Quarters/Match4" to="." method="_on_match_goals_setted"]
+[connection signal="goals_setted" from="Quarters/Match4/Team1Goals" to="Quarters/Match4" method="_on_team_1_goals_goals_setted"]
+[connection signal="text_changed" from="Quarters/Match4/Team1Goals" to="Quarters/Match4/Team1Goals" method="_on_text_changed"]
+[connection signal="goals_setted" from="Quarters/Match4/Team2Goals" to="Quarters/Match4" method="_on_team_2_goals_goals_setted"]
+[connection signal="text_changed" from="Quarters/Match4/Team2Goals" to="Quarters/Match4/Team2Goals" method="_on_text_changed"]
+[connection signal="pressed" from="Quarters/Match4/ButtonTeam1" to="Quarters/Match4" method="_on_button_team_1_pressed"]
+[connection signal="pressed" from="Quarters/Match4/ButtonTeam2" to="Quarters/Match4" method="_on_button_team_2_pressed"]

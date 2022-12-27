@@ -1,0 +1,121 @@
+[gd_scene load_steps=8 format=3 uid="uid://t0lfqr65ewjr"]
+
+[ext_resource type="Script" path="res://logic/add_user.gd" id="1_hhgmb"]
+[ext_resource type="Texture2D" uid="uid://gjrgn6mmd0uf" path="res://images/logo_qatar.png" id="2_1lpg2"]
+[ext_resource type="Theme" uid="uid://d1orvoggt0gkb" path="res://themes/qatar_theme.tres" id="3_0lnwj"]
+[ext_resource type="Script" path="res://logic/enter_name.gd" id="3_axyud"]
+[ext_resource type="FontFile" uid="uid://h2gu4xw8htn6" path="res://fonts/Qatar2022-Medium.otf" id="5_8g3n1"]
+[ext_resource type="Script" path="res://logic/user_name.gd" id="5_iiptj"]
+[ext_resource type="Script" path="res://logic/name_popup.gd" id="6_fdjc2"]
+
+[node name="AddUser" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hhgmb")
+metadata/_edit_lock_ = true
+
+[node name="LogoQatar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -210.0
+offset_top = 20.0
+offset_right = 210.0
+offset_bottom = 440.0
+grow_horizontal = 2
+
+[node name="Logo" type="TextureRect" parent="LogoQatar"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1lpg2")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="EnterName" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -226.5
+offset_top = -168.0
+offset_right = 226.5
+offset_bottom = -137.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("3_axyud")
+
+[node name="BackColor" type="ColorRect" parent="EnterName"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SetName" type="Button" parent="EnterName"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -83.0
+offset_right = 9.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("3_0lnwj")
+text = "Aceptar"
+
+[node name="CancelUser" type="Button" parent="EnterName"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -15.5
+offset_right = 91.0
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("5_8g3n1")
+text = "Cancelar"
+
+[node name="UserName" type="LineEdit" parent="EnterName"]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 366.0
+grow_vertical = 2
+theme = ExtResource("3_0lnwj")
+placeholder_text = "Nombre"
+clear_button_enabled = true
+script = ExtResource("5_iiptj")
+
+[node name="AcceptDialog" type="AcceptDialog" parent="EnterName/UserName"]
+title = "Introduzca un nombre"
+size = Vector2i(300, 80)
+popup_window = true
+theme = ExtResource("3_0lnwj")
+ok_button_text = "Aceptar"
+script = ExtResource("6_fdjc2")
+
+[node name="Label" type="Label" parent="EnterName/UserName/AcceptDialog"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("3_0lnwj")
+
+[connection signal="cancel" from="." to="EnterName/UserName" method="_on_add_user_cancel"]
+[connection signal="pressed" from="EnterName/SetName" to="EnterName/UserName" method="_name_comprobation"]
+[connection signal="pressed" from="EnterName/CancelUser" to="." method="_on_cancel_user_pressed"]
+[connection signal="name_setted" from="EnterName/UserName" to="." method="_on_user_name_name_setted"]
+[connection signal="text_submitted" from="EnterName/UserName" to="EnterName/UserName" method="_on_text_submitted"]
+[connection signal="visibility_changed" from="EnterName/UserName/AcceptDialog" to="EnterName/UserName/AcceptDialog" method="_on_visibility_changed"]

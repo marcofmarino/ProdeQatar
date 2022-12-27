@@ -1,0 +1,184 @@
+[gd_scene load_steps=14 format=3 uid="uid://duv7r12e3u103"]
+
+[ext_resource type="Script" path="res://logic/stage_selector.gd" id="1_o0oq3"]
+[ext_resource type="FontFile" uid="uid://h2gu4xw8htn6" path="res://fonts/Qatar2022-Medium.otf" id="2_okcdp"]
+[ext_resource type="Texture2D" uid="uid://imisvki21hkt" path="res://images/groups.png" id="3_qo86y"]
+[ext_resource type="Texture2D" uid="uid://crdsad3ciufhf" path="res://images/groups_focus.png" id="4_msvg5"]
+[ext_resource type="Texture2D" uid="uid://dwhedvfpt2jts" path="res://images/groups_disabled.png" id="5_q7ba6"]
+[ext_resource type="Texture2D" uid="uid://cvwpeyd1jaurh" path="res://images/knockout.png" id="6_0tnkj"]
+[ext_resource type="Texture2D" uid="uid://6rpg24byxhwu" path="res://images/knockout_focus.png" id="7_wlhhe"]
+[ext_resource type="Texture2D" uid="uid://dq0tjfn4usyb8" path="res://images/knockout_disabled.png" id="8_aq4qq"]
+[ext_resource type="Texture2D" uid="uid://c40vqur1g20ci" path="res://images/update.png" id="9_mb0fn"]
+[ext_resource type="Texture2D" uid="uid://b26dsi6mmec0r" path="res://images/update_disabled.png" id="10_fra4g"]
+[ext_resource type="Texture2D" uid="uid://bur8sy8r6dwpu" path="res://images/update_focus.png" id="10_tmvpc"]
+[ext_resource type="Theme" uid="uid://d1orvoggt0gkb" path="res://themes/qatar_theme.tres" id="11_ep1e5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pkn1s"]
+font = ExtResource("2_okcdp")
+font_size = 23
+
+[node name="StageSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o0oq3")
+metadata/_edit_vertical_guides_ = [25.0, 198.0]
+metadata/_edit_horizontal_guides_ = [743.0, 559.0, 591.0]
+
+[node name="UserName" type="Label" parent="."]
+layout_mode = 0
+offset_right = 207.0
+offset_bottom = 36.0
+text = "PLACEHOLDER"
+label_settings = SubResource("LabelSettings_pkn1s")
+
+[node name="Options" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -187.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionsContainer" type="HBoxContainer" parent="Options"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Groups" type="TextureButton" parent="Options/OptionsContainer"]
+layout_mode = 2
+offset_left = 199.0
+offset_right = 503.0
+offset_bottom = 330.0
+size_flags_horizontal = 4
+disabled = true
+texture_normal = ExtResource("3_qo86y")
+texture_hover = ExtResource("4_msvg5")
+texture_disabled = ExtResource("5_q7ba6")
+stretch_mode = 5
+
+[node name="Knockout" type="TextureButton" parent="Options/OptionsContainer"]
+layout_mode = 2
+offset_left = 528.0
+offset_right = 832.0
+offset_bottom = 330.0
+size_flags_vertical = 4
+disabled = true
+texture_normal = ExtResource("6_0tnkj")
+texture_hover = ExtResource("7_wlhhe")
+texture_disabled = ExtResource("8_aq4qq")
+stretch_mode = 5
+
+[node name="Update" type="TextureButton" parent="Options/OptionsContainer"]
+layout_mode = 2
+offset_left = 857.0
+offset_right = 1161.0
+offset_bottom = 330.0
+size_flags_vertical = 4
+disabled = true
+texture_normal = ExtResource("9_mb0fn")
+texture_hover = ExtResource("10_tmvpc")
+texture_disabled = ExtResource("10_fra4g")
+stretch_mode = 5
+
+[node name="BackExit" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BackExitContainer" type="HBoxContainer" parent="BackExit"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -34.0
+offset_right = -25.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="Back" type="Button" parent="BackExit/BackExitContainer"]
+layout_mode = 2
+offset_right = 78.0
+offset_bottom = 21.0
+theme = ExtResource("11_ep1e5")
+text = "Ir al menú"
+
+[node name="Control" type="Control" parent="BackExit/BackExitContainer"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 78.0
+offset_right = 1276.0
+offset_bottom = 21.0
+size_flags_horizontal = 3
+
+[node name="Exit" type="Button" parent="BackExit/BackExitContainer"]
+layout_mode = 2
+offset_left = 1276.0
+offset_right = 1310.0
+offset_bottom = 21.0
+size_flags_horizontal = 8
+theme = ExtResource("11_ep1e5")
+text = "Salir"
+
+[node name="Export" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = 175.0
+offset_right = 150.0
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("11_ep1e5")
+theme_override_font_sizes/font_size = 24
+text = "Guardar resultados"
+
+[node name="UpdateExport" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 179.0
+offset_top = 176.0
+offset_right = 480.0
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("11_ep1e5")
+theme_override_font_sizes/font_size = 24
+text = "Guardar actualización"
+
+[connection signal="pressed" from="Options/OptionsContainer/Groups" to="." method="_on_groups_pressed"]
+[connection signal="pressed" from="Options/OptionsContainer/Knockout" to="." method="_on_knockout_pressed"]
+[connection signal="pressed" from="Options/OptionsContainer/Update" to="." method="_on_update_pressed"]
+[connection signal="pressed" from="BackExit/BackExitContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="BackExit/BackExitContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Export" to="." method="_on_export_pressed"]
+[connection signal="pressed" from="UpdateExport" to="." method="_on_update_export_pressed"]

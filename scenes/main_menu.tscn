@@ -1,0 +1,175 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgax27hdlkbtb"]
+
+[ext_resource type="Script" path="res://logic/main_menu.gd" id="1_gqels"]
+[ext_resource type="Texture2D" uid="uid://gjrgn6mmd0uf" path="res://images/logo_qatar.png" id="1_u42gc"]
+[ext_resource type="Theme" uid="uid://d1orvoggt0gkb" path="res://themes/qatar_theme.tres" id="2_vtq7u"]
+[ext_resource type="Script" path="res://logic/users_list.gd" id="4_8dvug"]
+[ext_resource type="Script" path="res://logic/list.gd" id="5_8wnyq"]
+[ext_resource type="FontFile" uid="uid://h2gu4xw8htn6" path="res://fonts/Qatar2022-Medium.otf" id="8_1oyyj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lxusn"]
+font = ExtResource("8_1oyyj")
+font_size = 13
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gqels")
+metadata/_edit_lock_ = true
+metadata/_edit_vertical_guides_ = [523.0, 843.0]
+metadata/_edit_horizontal_guides_ = [626.0, 763.0, 630.0, 714.0]
+
+[node name="LogoQatar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -210.0
+offset_top = 20.0
+offset_right = 210.0
+offset_bottom = 440.0
+grow_horizontal = 2
+metadata/_edit_lock_ = true
+
+[node name="Logo" type="TextureRect" parent="LogoQatar"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_u42gc")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ButtonsArea" type="Control" parent="."]
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -157.0
+offset_top = -142.0
+offset_right = 162.0
+offset_bottom = -92.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Background" type="ColorRect" parent="ButtonsArea"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Separator" type="ColorRect" parent="ButtonsArea/Background"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.439216, 0.0980392, 0.239216, 1)
+
+[node name="Load" type="Button" parent="ButtonsArea"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -168.0
+offset_right = 168.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme = ExtResource("2_vtq7u")
+text = "Cargar"
+
+[node name="Exit" type="Button" parent="ButtonsArea"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -168.0
+offset_top = -23.0
+offset_right = 168.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_vtq7u")
+text = "Salir"
+
+[node name="UsersList" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.0
+offset_top = -383.0
+offset_right = 162.0
+offset_bottom = 382.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_8dvug")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UsersList"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -17.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="List" type="VBoxContainer" parent="UsersList/VBoxContainer"]
+offset_right = 319.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme = ExtResource("2_vtq7u")
+script = ExtResource("5_8wnyq")
+
+[node name="Add" type="Button" parent="UsersList/VBoxContainer"]
+offset_top = 4.0
+offset_right = 319.0
+offset_bottom = 32.0
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("8_1oyyj")
+text = "Agregar"
+
+[node name="Cancel" type="Button" parent="UsersList/VBoxContainer"]
+offset_top = 36.0
+offset_right = 319.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("8_1oyyj")
+text = "Cancelar"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = -22.0
+offset_right = 257.0
+offset_bottom = 2.0
+grow_vertical = 0
+text = "Prode Qatar 2022 - Versión 1.0.0
+"
+label_settings = SubResource("LabelSettings_lxusn")
+
+[connection signal="user_list_received" from="." to="UsersList/VBoxContainer/List" method="_on_main_menu_user_list_received"]
+[connection signal="pressed" from="ButtonsArea/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="ButtonsArea/Exit" to="." method="_on_exit_pressed"]
+[connection signal="user_selected" from="UsersList/VBoxContainer/List" to="." method="_on_list_user_selected"]
+[connection signal="pressed" from="UsersList/VBoxContainer/Add" to="." method="_on_add_pressed"]
+[connection signal="pressed" from="UsersList/VBoxContainer/Cancel" to="." method="_on_cancel_pressed"]

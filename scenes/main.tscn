@@ -1,0 +1,92 @@
+[gd_scene load_steps=10 format=3 uid="uid://dg2qcgph3wjig"]
+
+[ext_resource type="Script" path="res://logic/main.gd" id="1_u2g8n"]
+[ext_resource type="PackedScene" uid="uid://t0lfqr65ewjr" path="res://scenes/add_user.tscn" id="2_4nu08"]
+[ext_resource type="PackedScene" uid="uid://18hvpyyif434" path="res://scenes/groups.tscn" id="3_b1ciw"]
+[ext_resource type="PackedScene" uid="uid://cioxjlcplaedg" path="res://scenes/group_control.tscn" id="4_3li54"]
+[ext_resource type="PackedScene" uid="uid://bgax27hdlkbtb" path="res://scenes/main_menu.tscn" id="5_rut8o"]
+[ext_resource type="PackedScene" uid="uid://duv7r12e3u103" path="res://scenes/stage_selector.tscn" id="6_4h3h5"]
+[ext_resource type="PackedScene" uid="uid://dsk2816b7ghja" path="res://scenes/knockout.tscn" id="8_ovsko"]
+[ext_resource type="PackedScene" uid="uid://bmgnvrqacgkki" path="res://scenes/priority.tscn" id="8_u6jfx"]
+[ext_resource type="PackedScene" uid="uid://bw6mpkw6t35km" path="res://scenes/update.tscn" id="9_nhyjw"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_u2g8n")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.439216, 0.0980392, 0.239216, 1)
+metadata/_edit_lock_ = true
+
+[node name="AddUser" parent="." instance=ExtResource("2_4nu08")]
+visible = false
+
+[node name="Groups" parent="." instance=ExtResource("3_b1ciw")]
+visible = false
+
+[node name="GroupControl" parent="." instance=ExtResource("4_3li54")]
+visible = false
+
+[node name="MainMenu" parent="." instance=ExtResource("5_rut8o")]
+visible = false
+
+[node name="StageSelector" parent="." instance=ExtResource("6_4h3h5")]
+visible = false
+metadata/_edit_vertical_guides_ = [25.0, 1335.0]
+metadata/_edit_horizontal_guides_ = [743.0]
+
+[node name="Priority" parent="." instance=ExtResource("8_u6jfx")]
+visible = false
+
+[node name="Knockout" parent="." instance=ExtResource("8_ovsko")]
+visible = false
+
+[node name="Update" parent="." instance=ExtResource("9_nhyjw")]
+visible = false
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Guardar"
+position = Vector2i(400, 184)
+size = Vector2i(500, 400)
+transient = false
+extend_to_title = true
+min_size = Vector2i(500, 400)
+ok_button_text = "Guardar"
+dialog_hide_on_ok = true
+mode_overrides_title = false
+access = 2
+
+[connection signal="save" from="." to="." method="_on_save"]
+[connection signal="cancel" from="AddUser" to="." method="_on_add_user_cancel"]
+[connection signal="name_setted" from="AddUser" to="." method="_user_added"]
+[connection signal="all_groups_setted" from="Groups" to="." method="_on_groups_all_groups_setted"]
+[connection signal="back_to_stage_selector" from="Groups" to="." method="_on_groups_back_to_stage_selector"]
+[connection signal="exit" from="Groups" to="." method="_exit"]
+[connection signal="group_selected" from="Groups" to="." method="_on_groups_group_selected"]
+[connection signal="back_to_group_selection" from="GroupControl" to="." method="_on_group_control_back_to_group_selection"]
+[connection signal="group_confirmed" from="GroupControl" to="." method="_on_group_control_group_confirmed"]
+[connection signal="save_group_data" from="GroupControl" to="." method="_on_group_control_save_group_data"]
+[connection signal="set_priority" from="GroupControl" to="." method="_on_group_control_set_priority"]
+[connection signal="exit_menu" from="MainMenu" to="." method="_exit"]
+[connection signal="request_add" from="MainMenu" to="." method="_on_main_menu_request_add"]
+[connection signal="user_selected" from="MainMenu" to="." method="_on_main_menu_user_selected"]
+[connection signal="exit" from="StageSelector" to="." method="_exit"]
+[connection signal="export" from="StageSelector" to="." method="_on_stage_selector_export"]
+[connection signal="export_update" from="StageSelector" to="." method="_on_stage_selector_export_update"]
+[connection signal="go_to_menu" from="StageSelector" to="." method="_on_stage_selector_go_to_menu"]
+[connection signal="groups" from="StageSelector" to="." method="_on_stage_selector_groups"]
+[connection signal="knockout" from="StageSelector" to="." method="_on_stage_selector_knockout"]
+[connection signal="update" from="StageSelector" to="." method="_on_stage_selector_update"]
+[connection signal="back" from="Priority" to="." method="_on_priority_back"]
+[connection signal="priority_setted" from="Priority" to="." method="_on_priority_priority_setted"]
+[connection signal="back_from_knockout" from="Knockout" to="." method="_on_knockout_back_from_knockout"]
+[connection signal="knockout_setted" from="Knockout" to="." method="_on_knockout_knockout_setted"]
+[connection signal="save_knockout_data" from="Knockout" to="." method="_on_knockout_save_knockout_data"]
+[connection signal="back_from_update" from="Update" to="." method="_on_update_back_from_update"]
+[connection signal="save_update_data" from="Update" to="." method="_on_update_save_update_data"]
+[connection signal="update_confirmed" from="Update" to="." method="_on_update_update_confirmed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
